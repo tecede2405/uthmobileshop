@@ -1,0 +1,15 @@
+.checkout-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.checkout-form input,
+.checkout-form select {
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.checkout-form .form-group {
+  margin-bottom: 20px;
+}

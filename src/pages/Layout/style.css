@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+/* Header */
+.header {
+    background: linear-gradient(to right, #1e3c72, #2a5298, #ff416c, #ff4b2b);
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+.page-header {
+    display : flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo-page{
+    width: 140px;
+    height:70px;
+    object-fit:cover;
+}
+.page-cart,.page-login, .page-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor : pointer;
+}
+
+.login-button{
+    color: #fff!important;
+}
+.cart-title, .login-title, .contact-title {
+    margin : 0;
+    margin-right: 10px;
+}
+.page-search {
+    background : #fff;
+    border-radius: 8px;
+    padding: 0;
+    height: 35px;
+}
+.search-input {
+    width: 400px;
+    border: none;
+    padding-left: 15px;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.search-button {
+    color: #000;
+    width: 30px;
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+
+/* NavBar */
+
+
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #eee;
+  padding: 40px 60px 10px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-column h4 {
+  margin-bottom: 12px;
+  color: #ff6600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.footer-column p {
+  color: #ccc;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #aaa;
+}
+/* End Footer */
+
+
+.home{
+    flex: 1;
+}
+
+.main-content{
+    display: flex;
+}

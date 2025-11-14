@@ -1,0 +1,134 @@
+.products{
+    margin-left: 100px;
+    margin-bottom: 30px;
+    min-height: 80vh;
+}
+.product-banner-image{
+  margin-top: 5px;
+  margin-left: 90px;
+  width: 80%;
+  height: 280px;
+  object-fit: cover;
+}
+.product-card{
+  height: 350px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.product-image{
+    width: 100%;
+    height: auto;
+
+}
+.product-name{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.product-price{
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.product-discount{
+    font-size: 12px;
+    color: green;
+    margin-bottom: 5px;
+}
+.product-installment{
+    font-size: 12px;
+    color: #555;
+}
+
+
+/* products/detail */
+
+.product-detail {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.product-detail-box{
+  display: flex;
+}
+.product-info {
+    margin: 0 20px;
+    max-width: 600px;
+}
+.product-detail-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.product-detail-discount{
+  color: green;
+  font-size: 18px;
+  font-weight: 700;
+}
+.product-detail-price{
+  color: red;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.product-description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product-thumbnail {
+    width: 50%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+/* .product-detail-thumbnail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.gallery-carousel {
+  width: 100%;
+}
+
+/* Hàng thumbnail */
+.thumbnail-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Ảnh thumbnail */
+.detail-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.detail-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.detail-thumbnail.active {
+  border: 2px solid #007bff;
+}
+
+.banner-image{
+  width: 100%;
+  height: 350px;
+  object-fit:cover;
+  margin: 30px 0;
+}
