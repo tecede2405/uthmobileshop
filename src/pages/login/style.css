@@ -16,3 +16,37 @@
   padding-bottom:20px;
   cursor : pointer;
 }
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .card {
+    width: 100% !important;
+    border-radius: 12px;
+    padding: 20px !important;
+  }
+
+  .form-label {
+    font-size: 0.95rem;
+  }
+
+  .form-control {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-center span {
+    font-size: 0.95rem;
+  }
+}

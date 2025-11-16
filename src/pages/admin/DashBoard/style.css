@@ -1,0 +1,45 @@
+
+/* Ẩn tìm kiếm dưới header mặc định */
+.admin-mobile-search-bar {
+  display: none;
+}
+
+
+/* Responsive tìm kiếm admin */
+@media (max-width: 768px) {
+  .page-search .search-input{
+    display: none!important;
+  }
+   .page-search .search-button{
+    display: none!important;
+  }
+
+  .admin-mobile-search-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    gap: 10px;
+  }
+
+  .admin-mobile-search-bar .search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .admin-mobile-search-bar button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ẩn tìm kiếm dưới header khi màn hình lớn */
+@media (min-width: 769px) {
+  .admin-mobile-search-bar {
+    display: none !important;
+  }
+}

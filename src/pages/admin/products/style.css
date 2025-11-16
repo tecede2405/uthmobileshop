@@ -3,3 +3,74 @@
   justify-content: center;
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-end {
+    text-align: center !important;
+    margin-bottom: 1rem;
+  }
+
+  .text-end .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .table thead {
+    display: none;
+  }
+  .table thead th{
+    font-size: 12px;
+  }
+
+  .table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+    color: #555;
+  }
+
+  .table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .table img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .d-flex.justify-content-center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .d-flex.justify-content-center .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}

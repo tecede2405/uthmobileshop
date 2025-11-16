@@ -1,0 +1,49 @@
+@media (max-width: 768px) {
+  .cart table {
+    font-size: 14px;
+  }
+
+  .cart thead {
+    display: none; /* Ẩn tiêu đề bảng */
+  }
+
+  .cart tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .cart tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .cart tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+    color: #555;
+  }
+
+  .cart tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .cart .d-flex {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .cart .d-flex button,
+  .cart .d-flex h5 {
+    width: 100%;
+    text-align: center;
+  }
+}

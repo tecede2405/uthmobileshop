@@ -8,3 +8,91 @@
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
 
 }
+.mobile-search-bar {
+  display: none;
+}
+
+/* responsive cho header */
+@media (max-width: 768px) {
+  .page-header{
+    width: 100%!important;
+    margin: 0!important;
+    padding: 0px!important;
+    justify-content: space-between;
+  }
+
+
+  .logo-page {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .page-cart,
+  .page-contact,
+  .page-login {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0px 5px 0px 0px!important;
+  }
+  .cart-title,
+  .login-title,
+  .contact-title {
+    font-size: 0.7rem;
+    margin:1px!important;
+  }
+
+  .header-icon{
+    font-size: 25px;
+  }
+
+  .login-button{
+    font-size: 0.7rem!important;
+  }
+  .page-search {
+    display: none!important;
+  }
+  
+  .mobile-search-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    gap: 10px;
+  }
+
+  .mobile-search-bar .search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .mobile-search-bar button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .footer{
+    padding: 15px 30px!important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search-input {
+    width: 300px;
+  }
+
+  .logo-page {
+    width: 130px;
+  }
+
+  .cart-title,
+  .login-title,
+  .contact-title {
+    font-size: 1rem;
+  }
+
+}

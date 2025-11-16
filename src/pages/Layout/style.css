@@ -42,13 +42,14 @@
     margin-right: 10px;
 }
 .page-search {
+    display: flex;
     background : #fff;
     border-radius: 8px;
     padding: 0;
     height: 35px;
 }
 .search-input {
-    width: 400px;
+    width: 300px;
     border: none;
     padding-left: 15px;
     border-radius: 8px;
@@ -69,6 +70,26 @@
 
 
 /* NavBar */
+.main-content {
+  padding-top: 1rem;
+  min-height: 80vh;
+}
+
+.drawer .ant-drawer-body {
+  padding: 0;
+}
+.btn-menu-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+
 
 
 
@@ -131,4 +152,11 @@
 
 .main-content{
     display: flex;
+}
+
+/* Ẩn icon trên màn hình lớn */
+@media (min-width: 768px) {
+  .btn-menu-toggle {
+    display: none;
+  }
 }

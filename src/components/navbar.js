@@ -1,29 +1,32 @@
-import { Layout, Menu } from 'antd';
+import { Drawer, Menu, Grid, Layout } from 'antd';
 import {
   UserOutlined,
   LaptopOutlined,
   NotificationOutlined
 } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-
 const { Sider } = Layout;
+const { useBreakpoint } = Grid;
 
-function SidebarNav() {
+function SidebarNav({ visible, onClose }) {
   const navigate = useNavigate();
+  const screens = useBreakpoint(); // 👈 Lấy thông tin kích thước màn hình
+
+  const isDesktop = screens.md; // md = ≥768px
 
   const brandMap = {
-  iphone: 'Apple',
-  samsung: 'Samsung',
-  xiaomi: 'Xiaomi',
-  oppo: 'Oppo',
-  asus: 'Asus',
-  acer: 'Acer',
-  dell: 'Dell',
-  hp: 'HP',
-  lenovo: 'Lenovo',
-  air: 'iPad Air',
-  pro: 'iPad Pro'
-};
+    iphone: 'Apple',
+    samsung: 'Samsung',
+    xiaomi: 'Xiaomi',
+    oppo: 'Oppo',
+    asus: 'Asus',
+    acer: 'Acer',
+    dell: 'Dell',
+    hp: 'HP',
+    lenovo: 'Lenovo',
+    air: 'iPad Air',
+    pro: 'iPad Pro'
+  };
 
   const items = [
     {
@@ -47,7 +50,7 @@ function SidebarNav() {
         { key: 'laptop-acer', label: 'Acer' },
         { key: 'laptop-dell', label: 'Dell' },
         { key: 'laptop-hp', label: 'HP' },
-        { key: 'laptop-lenovo', label: 'Lenovo' },
+        { key: 'laptop-lenovo', label: 'Lenovo' }
       ]
     },
     {
@@ -57,35 +60,49 @@ function SidebarNav() {
       children: [
         { key: 'tablet-samsung', label: 'Samsung' },
         { key: 'tablet-Apple', label: 'iPad Air' },
-        { key: 'tablet-xiaomi', label: 'Xiaomi' },
+        { key: 'tablet-xiaomi', label: 'Xiaomi' }
       ]
     }
   ];
 
-  
   const handleClick = (e) => {
     const [category, brandKey] = e.key.split('-');
     const brand = brandMap[brandKey] || brandKey;
-
     navigate(`/search?category=${category}&brand=${brand}`);
+    onClose(); // đóng Drawer nếu đang mở
   };
 
-  return (
-    <>
-    <div className="navbar">
+  // 👉 Nếu là desktop, hiển thị Sider cố định
+  if (isDesktop) {
+    return (
       <Sider width={200} className="site-layout-background">
+        <Menu
+          mode="inline"
+          defaultOpenKeys={['sub1', 'sub2', 'sub3']}
+          items={items}
+          onClick={handleClick}
+          style={{ height: '100%', borderRight: 0 }}
+        />
+      </Sider>
+    );
+  }
+
+  // 👉 Nếu là mobile, hiển thị Drawer
+  return (
+    <Drawer
+      title="Danh mục sản phẩm"
+      placement="left"
+      onClose={onClose}
+      open={visible}
+      width={250}
+    >
       <Menu
         mode="inline"
         defaultOpenKeys={['sub1', 'sub2', 'sub3']}
-        style={{ height: '100%',borderRight: 0}}
         items={items}
         onClick={handleClick}
       />
-      </Sider>
-    </div>
-      
-    </>
-    
+    </Drawer>
   );
 }
 

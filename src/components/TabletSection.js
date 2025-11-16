@@ -25,12 +25,12 @@ function TabletSection() {
         className="product-banner-image"
     />
     <div className="products mt-3">
-      <h2 className="mt-1 mb-1">Máy tính bảng</h2>
+      <h2 className="mt-1 mb-4">Máy tính bảng</h2>
       <div className="product-list row g-4">
         {products.map((product) => (
           <div
             key={product._id}
-            className="product-card col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 me-2 mt-5"
+            className="product-card col-5 col-sm-3 col-md-3 col-lg-3 col-xl-2 me-3 mt-3"
             onClick={() => handleClick(product)}
           >
             <img

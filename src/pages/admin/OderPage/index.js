@@ -96,25 +96,36 @@ function AdminOrderPage() {
             <tbody className="text-center align-middle">
               {orders.map((order) => (
                 <tr key={order._id}>
-                  <td>{order.info.name}</td>
-                  <td>{order.info.phone}</td>
-                  <td>{order.info.address}</td>
-                  <td>
+                  <td data-label="Người đặt">{order.info.name}</td>
+                  <td data-label="SĐT">{order.info.phone}</td>
+                  <td data-label="Địa chỉ">{order.info.address}</td>
+                  <td data-label="Sản phẩm">
                     <ul className="list-unstyled mb-0 text-start">
                       {order.items?.map((item, idx) => (
                         <li key={idx}>
                           {item.productId?.thumbnail && (
-                            <img src={item.productId.thumbnail} alt={item.productId.name} width={40} className="me-2" />
+                            <img
+                              src={item.productId.thumbnail}
+                              alt={item.productId.name}
+                              width={40}
+                              className="me-2"
+                            />
                           )}
-                          {item.productId?.name ? `${item.productId.name} x${item.quantity}` : "Sản phẩm không xác định"}
+                          {item.productId?.name
+                            ? `${item.productId.name} x${item.quantity}`
+                            : "Sản phẩm không xác định"}
                         </li>
                       ))}
                     </ul>
                   </td>
-                  <td>{order.method === "cod" ? "Giao tận nơi" : "Nhận tại cửa hàng"}</td>
-                  <td className="text-danger fw-bold">{order.total.toLocaleString()}₫</td>
-                  <td>{renderStatus(order.status)}</td>
-                  <td>
+                  <td data-label="Phương thức">
+                    {order.method === "cod" ? "Giao tận nơi" : "Nhận tại cửa hàng"}
+                  </td>
+                  <td data-label="Tổng tiền" className="text-danger fw-bold">
+                    {order.total.toLocaleString()}₫
+                  </td>
+                  <td data-label="Trạng thái">{renderStatus(order.status)}</td>
+                  <td data-label="Hành động">
                     {order.status === "pending" && (
                       <Button
                         variant="success"

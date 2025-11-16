@@ -6,6 +6,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import Swal from "sweetalert2";
 import DiscountSection from "../../components/DiscountSection";
 import { useCart } from "../../context/CartContext"; // Import context
+import "./style.css";
 
 function ProductDetail() {
   const API_URL = process.env.REACT_APP_API_URL;

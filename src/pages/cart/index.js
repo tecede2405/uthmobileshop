@@ -4,6 +4,8 @@ import { Table, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import "./style.css";
+
 
 const Cart = () => {
   const API_URL = process.env.REACT_APP_API_URL;
@@ -150,54 +152,55 @@ const Cart = () => {
               </tr>
             </thead>
             <tbody className="text-center">
-              {cart.map((item) => (
-                <tr key={item.productId._id}>
-                  <td>
-                    <img
-                      src={item.productId.thumbnail}
-                      alt={item.productId.name}
-                      width="70"
-                      style={{ borderRadius: "8px" }}
-                    />
-                  </td>
-                  <td>{item.productId.name}</td>
-                  <td>{item.productId.price.toLocaleString()}₫</td>
-                  <td>
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      onClick={() =>
-                        handleQuantityChange(item.productId._id, item.quantity - 1)
-                      }
-                    >
-                      -
-                    </Button>{" "}
-                    {item.quantity}{" "}
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      onClick={() =>
-                        handleQuantityChange(item.productId._id, item.quantity + 1)
-                      }
-                    >
-                      +
-                    </Button>
-                  </td>
-                  <td>
-                    {(item.productId.price * item.quantity).toLocaleString()}₫
-                  </td>
-                  <td>
-                    <Button
-                      variant="danger"
-                      size="sm"
-                      onClick={() => handleRemove(item.productId._id)}
-                    >
-                      Xóa
-                    </Button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+  {cart.map((item) => (
+    <tr key={item.productId._id}>
+      <td data-label="Ảnh">
+        <img
+          src={item.productId.thumbnail}
+          alt={item.productId.name}
+          width="70"
+          style={{ borderRadius: "8px" }}
+        />
+      </td>
+      <td data-label="Tên sản phẩm">{item.productId.name}</td>
+      <td data-label="Giá">{item.productId.price.toLocaleString()}₫</td>
+      <td data-label="Số lượng">
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={() =>
+            handleQuantityChange(item.productId._id, item.quantity - 1)
+          }
+        >
+          -
+        </Button>{" "}
+        {item.quantity}{" "}
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={() =>
+            handleQuantityChange(item.productId._id, item.quantity + 1)
+          }
+        >
+          +
+        </Button>
+      </td>
+      <td data-label="Tổng">
+        {(item.productId.price * item.quantity).toLocaleString()}₫
+      </td>
+      <td data-label="Hành động">
+        <Button
+          variant="danger"
+          size="sm"
+          onClick={() => handleRemove(item.productId._id)}
+        >
+          Xóa
+        </Button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
           </Table>
 
           <div className="d-flex justify-content-between align-items-center mt-3">

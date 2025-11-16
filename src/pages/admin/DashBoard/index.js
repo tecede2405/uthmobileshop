@@ -3,6 +3,8 @@ import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
 import { Pie, Bar } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement, Tooltip, Legend } from "chart.js";
 import HeaderAdmin from "../../../components/HeaderAdmin";
+import Footer from "../../../components/footer";
+import "./style.css";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement, Tooltip, Legend);
 
@@ -89,9 +91,9 @@ function AdminDashboardPage() {
       <Container className="mt-5 mb-5">
         <h2 className="text-center mb-4">Thống kê tổng quan</h2>
 
-        <Row className="mb-4">
+        <Row className="mb-2">
           <Col md={6}>
-            <Card className="p-3">
+            <Card className="p-3 mb-2">
               <h5 className="text-center">Doanh thu theo tháng</h5>
               <Bar data={revenueChart} />
             </Card>
@@ -113,6 +115,7 @@ function AdminDashboardPage() {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 }

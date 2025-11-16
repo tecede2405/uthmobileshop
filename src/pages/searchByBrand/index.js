@@ -34,7 +34,7 @@
                     <div className="products">
                         <div className="product-list row g-4">
                             {products.map(product => (
-                                <div key={product.id} className="product-card col-6 col-sm-4
+                                <div key={product.id} className="product-card col-5 col-sm-4
                                 col-md-3 col-lg-3 col-xl-2 me-2 mt-5" onClick={() => handleClick(product)}>
                                     <img src={product.thumbnail} alt={product.name} className="product-image" />
                                     <h3 className="product-name">{product.name}</h3>

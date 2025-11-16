@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+    .product-detail-box{
+        flex-direction: column;
+    }
+    .product-info{
+        margin-bottom: 20px;
+    }
+    .banner-image{
+        width: 100%;
+        height:auto;
+        object-fit: contain;
+    }
+    .discount-title{
+        font-size: 22px;
+    }
+    .product-name{
+        font-size: 13px;
+    }
+    .product-price{
+        font-size:13px;
+    }
+}

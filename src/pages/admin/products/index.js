@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import HeaderAdmin from "../../../components/HeaderAdmin";
 import Footer from "../../../components/footer";
+import "./style.css";
 
 function AdminProductPage() {
   const API_URL = process.env.REACT_APP_API_URL;
@@ -216,30 +217,41 @@ function AdminProductPage() {
                 </tr>
               </thead>
               <tbody className="text-center align-middle">
-                {products.map((item) => (
-                  <tr key={item._id}>
-                    <td>
-                      <img src={item.thumbnail} alt={item.name} width="70" className="rounded" />
-                    </td>
-                    <td>{item.name}</td>
-                    <td className="text-danger fw-bold">{item.price.toLocaleString()}₫</td>
-                    <td>{renderStatusBadge(item.status, item._id)}</td>
-                    <td>
-                      <Button
-                        variant="warning"
-                        size="sm"
-                        className="me-2"
-                        onClick={() => navigate(`/admin/products/edit/${item._id}`)}
-                      >
-                        Sửa
-                      </Button>
-                      <Button variant="danger" size="sm" onClick={() => handleDelete(item._id)}>
-                        Xóa
-                      </Button>
+                {products.length === 0 ? (
+                  <tr>
+                    <td colSpan="5" className="text-center text-muted">
+                      Không tìm thấy sản phẩm nào.
                     </td>
                   </tr>
-                ))}
+                ) : (
+                  products.map((item) => (
+                    <tr key={item._id}>
+                      <td data-label="Ảnh">
+                        <img src={item.thumbnail} alt={item.name} width="70" className="rounded" />
+                      </td>
+                      <td data-label="Tên">{item.name}</td>
+                      <td data-label="Giá" className="text-danger fw-bold">
+                        {item.price.toLocaleString()}
+                      </td>
+                      <td data-label="Trạng thái">{renderStatusBadge(item.status, item._id)}</td>
+                      <td data-label="Hành động">
+                        <Button
+                          variant="warning"
+                          size="sm"
+                          className="me-2"
+                          onClick={() => navigate(`/admin/products/edit/${item._id}`)}
+                        >
+                          Sửa
+                        </Button>
+                        <Button variant="danger" size="sm" onClick={() => handleDelete(item._id)}>
+                          Xóa
+                        </Button>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
+
             </Table>
 
             {renderPagination()}

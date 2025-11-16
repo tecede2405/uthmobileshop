@@ -55,7 +55,7 @@ function SearchByName() {
               {products.map((product) => (
                 <div
                   key={product._id || product.id}
-                  className="product-card col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 me-2 mt-5"
+                  className="product-card col-5 col-sm-4 col-md-3 col-lg-3 col-xl-2 me-2 mt-3"
                   onClick={() => handleClick(product)}
                 >
                   <img
