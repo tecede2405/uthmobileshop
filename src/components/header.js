@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import Swal from "sweetalert2";
 import logo from "../assets/image/logo.png";
 import { useCart } from "../context/CartContext";
+import Marquee from "react-fast-marquee";
 
 function Header({ onToggleSidebar } ) {
   const navigate = useNavigate();
@@ -182,6 +183,11 @@ function Header({ onToggleSidebar } ) {
               <RxAvatar className="header-icon"/>
             </div>
           )}
+        </div>
+        <div className="container">
+          <Marquee className="p-2" pauseOnHover={true} gradient={false} speed={40}>
+            <span className="text-marquee">Chào mừng bạn đến với UTH Mobile Shop ! Siêu ưu đãi tháng 11 - Giảm giá lên đến 15% cho tất cả các sản phẩm! Nhanh tay kẻo lỡ!</span>
+          </Marquee>
         </div>
     </header>
     <div className="mobile-search-bar">
