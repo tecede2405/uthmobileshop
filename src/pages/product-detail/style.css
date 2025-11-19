@@ -19,4 +19,7 @@
     .product-price{
         font-size:13px;
     }
+    .detail-btn{
+        padding:6px!important;
+    }
 }

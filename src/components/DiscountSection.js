@@ -32,7 +32,7 @@ function DiscountSection({ percentage = 10 }) {
             products.map((product) => (
               <div
                 key={product._id}
-                className="product-card col-5 col-sm-4 col-md-3 col-lg-3 col-xl-2 me-3 mt-5"
+                className="product-card col-5 col-sm-3 col-md-3 col-lg-3 col-xl-2 me-3 mt-5"
                 onClick={() => handleClick(product)}
               >
                 <img

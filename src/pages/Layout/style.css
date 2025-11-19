@@ -14,6 +14,19 @@
     z-index: 9999;
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
+.header-admin{
+    background: linear-gradient(to right, #1e3c72, #2a5298, #ff416c, #ff4b2b);
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
 .page-header {
     display : flex;
     justify-content: space-evenly;

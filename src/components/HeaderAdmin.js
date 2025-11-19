@@ -43,7 +43,7 @@ function HeaderAdmin() {
 
   return (
     <>
-      <header className="header">
+      <header className="header-admin">
         <div className="container page-header d-flex justify-content-between align-items-center">
           <img
             src={logo}

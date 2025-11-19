@@ -130,11 +130,11 @@ function ProductDetail() {
             </span>
           </p>
 
-          <button className="btn btn-danger" onClick={handleCheckout}>
+          <button className="detail-btn btn btn-danger" onClick={handleCheckout}>
             Mua ngay
           </button>
 
-          <button className="btn btn-success ms-3" onClick={handleAddToCart}>
+          <button className="detail-btn btn btn-success ms-3" onClick={handleAddToCart}>
             Thêm vào giỏ hàng <FaCartArrowDown />
           </button>
 
