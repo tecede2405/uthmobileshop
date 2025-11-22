@@ -8,17 +8,17 @@ export default function Footer() {
           <h4>Về Chúng tôi</h4>
           <ul>
             <li><Link to="/about">Giới thiệu</Link></li>
-            <li><Link to="/news">Tin tức</Link></li>
-            <li><Link to="/contact">Liên hệ</Link></li>
+            <li><Link to="/about">Tin tức</Link></li>
+            <li><Link to="/about">Liên hệ</Link></li>
           </ul>
         </div>
 
         <div className="footer-column">
           <h4>Chính sách</h4>
           <ul>
-            <li><Link to="/warranty">Bảo hành</Link></li>
-            <li><Link to="/return-policy">Đổi trả</Link></li>
-            <li><Link to="/privacy">Bảo mật thông tin</Link></li>
+            <li><Link to="/about">Bảo hành</Link></li>
+            <li><Link to="/about">Đổi trả</Link></li>
+            <li><Link to="/about">Bảo mật thông tin</Link></li>
           </ul>
         </div>
 

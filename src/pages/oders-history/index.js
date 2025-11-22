@@ -96,6 +96,12 @@ function OrderHistoryPage() {
     }
   };
 
+  const getDiscountedPrice = (item) => {
+  const price = item.price; 
+  const discount = item.productId.discount || 0; 
+  return price * (1 - discount);
+  };
+
   return (
     <div className="container mt-5 mb-5">
       <h2 className="text-center mb-4">Lịch sử mua hàng</h2>
@@ -143,10 +149,10 @@ function OrderHistoryPage() {
                             />
                           </td>
                           <td>{product.name}</td>
-                          <td>{item.price.toLocaleString()}₫</td>
+                          <td>{getDiscountedPrice(item).toLocaleString()}₫</td>
                           <td>{item.quantity}</td>
                           <td>
-                            {(item.price * item.quantity).toLocaleString()}₫
+                            {(getDiscountedPrice(item) * item.quantity).toLocaleString()}₫
                           </td>
                         </tr>
                       );

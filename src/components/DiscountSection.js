@@ -24,7 +24,7 @@ function DiscountSection({ percentage = 10 }) {
         alt="Banner"
         className="banner-image"
       />
-      <div className="products mt-3 ms-4 mb-0">
+      <div className="products mt-3 mb-0">
         <ScrollToTop />
         <h2 className="discount-title mt-1 mb-1">Sản phẩm khuyến mãi hôm nay</h2>
         <div className="product-list row g-4">
@@ -32,7 +32,7 @@ function DiscountSection({ percentage = 10 }) {
             products.map((product) => (
               <div
                 key={product._id}
-                className="product-card col-5 col-sm-3 col-md-3 col-lg-3 col-xl-2 me-3 mt-5"
+                className="product-card col-5 col-sm-4 col-md-3 col-lg-3 col-xl-2 me-3 mt-5"
                 onClick={() => handleClick(product)}
               >
                 <img

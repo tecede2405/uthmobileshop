@@ -16,7 +16,7 @@ import CreateProductPage from "./pages/admin/CreateProductPage/index";
 import AdminOrderPage from "./pages/admin/OderPage/index";
 import AdminGuard from "./components/AdminGuard";
 import Admin from "./pages/admin/DashBoard/index";
-
+import About from "./pages/about/index";
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-history" element={<OderHistoryPage />} />
+        <Route path="/about" element={<About />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />}/>

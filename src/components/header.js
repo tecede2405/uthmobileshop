@@ -1,6 +1,7 @@
-import { FaCartArrowDown, FaBars} from "react-icons/fa";
+import { FaCartArrowDown, FaBars,FaCartPlus,FaPhone} from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
-import { CiSearch, CiClock1 } from "react-icons/ci";
+import { CiSearch, CiClock1,CiDeliveryTruck } from "react-icons/ci";
+import { RiDiscountPercentLine } from "react-icons/ri";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import Swal from "sweetalert2";
@@ -186,8 +187,8 @@ function Header({ onToggleSidebar } ) {
         </div>
         <div className="container">
           <Marquee className="p-2" gradient={false} speed={40}>
-            <span className="text-marquee me-1">Chào mừng bạn đến với UTH Mobile Shop!</span>
-            <span className="text-marquee me-5">Siêu ưu đãi tháng 11 - Giảm giá lên đến 15% cho tất cả các sản phẩm! Nhanh tay kẻo lỡ!</span>
+            <span className="text-marquee me-1"><FaCartPlus /> Chào mừng bạn đến với UTH Mobile Shop !</span>
+            <span className="text-marquee me-5"><CiDeliveryTruck /> Siêu ưu đãi tháng 11 - <RiDiscountPercentLine /> Giảm giá lên đến 15% cho tất cả các sản phẩm - <FaPhone /> Nhanh tay kẻo lỡ !</span>
           </Marquee>
         </div>
     </header>

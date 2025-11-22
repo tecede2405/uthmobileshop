@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 import "./style.css";
 
 function Register() {
@@ -10,6 +12,10 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+   // Cuộn lên đầu
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,75 +67,79 @@ function Register() {
   };
 
   return (
-    <div className="login-container d-flex justify-content-center align-items-center vh-100 bg-light">
-      <div className="card shadow p-4" style={{ width: "400px", borderRadius: "16px" }}>
-        <h2 className="text-center mb-4">Đăng ký</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Họ và tên</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Nhập họ và tên..."
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
+    <>
+      <Header />
+      <div className="login-container d-flex justify-content-center align-items-center vh-100 bg-light">
+        <div className="card shadow p-4" style={{ width: "400px", borderRadius: "16px" }}>
+          <h2 className="text-center mb-4">Đăng ký</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label className="form-label">Họ và tên</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nhập họ và tên..."
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
 
-          <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Nhập email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Nhập email..."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
 
-          <div className="mb-3">
-            <label className="form-label">Mật khẩu</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Nhập mật khẩu..."
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+            <div className="mb-3">
+              <label className="form-label">Mật khẩu</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Nhập mật khẩu..."
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
 
-          <div className="mb-3">
-            <label className="form-label">Xác nhận mật khẩu</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Nhập lại mật khẩu..."
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
+            <div className="mb-3">
+              <label className="form-label">Xác nhận mật khẩu</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Nhập lại mật khẩu..."
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
 
-          <button type="submit" className="btn btn-primary w-100">
-            Đăng ký
-          </button>
-        </form>
+            <button type="submit" className="btn btn-primary w-100">
+              Đăng ký
+            </button>
+          </form>
 
-        <p className="text-center mt-3 mb-0">
-          Đã có tài khoản?{" "}
-          <span
-            className="text-primary"
-            style={{ cursor: "pointer" }}
-            onClick={() => navigate("/login")}
-          >
-            Đăng nhập ngay
-          </span>
-        </p>
+          <p className="text-center mt-3 mb-0">
+            Đã có tài khoản?{" "}
+            <span
+              className="text-primary"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/login")}
+            >
+              Đăng nhập ngay
+            </span>
+          </p>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

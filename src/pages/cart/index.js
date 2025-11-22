@@ -126,11 +126,17 @@ const Cart = () => {
     }
     navigate("/checkout", { state: { items: cart, fromCart: true } });
   };
+  const getDiscountedPrice = (item) => {
+    const price = item.productId.price;
+    const discount = item.productId.discount || 0; // mặc định 0 nếu không có giảm giá
+    return price * (1 - discount / 100);
+  };
 
   const totalPrice = cart.reduce(
-    (sum, item) => sum + item.productId.price * (item.quantity || 1),
-    0
-  );
+  (sum, item) => sum + getDiscountedPrice(item) * (item.quantity || 1),
+  0 );
+
+
 
   return (
     <div className="cart container mt-5 mb-3">
@@ -163,7 +169,7 @@ const Cart = () => {
         />
       </td>
       <td data-label="Tên sản phẩm">{item.productId.name}</td>
-      <td data-label="Giá">{item.productId.price.toLocaleString()}₫</td>
+      <td data-label="Giá">{getDiscountedPrice(item).toLocaleString()}₫</td>
       <td data-label="Số lượng">
         <Button
           variant="secondary"
@@ -186,7 +192,7 @@ const Cart = () => {
         </Button>
       </td>
       <td data-label="Tổng">
-        {(item.productId.price * item.quantity).toLocaleString()}₫
+        {(getDiscountedPrice(item) * item.quantity).toLocaleString()}₫
       </td>
       <td data-label="Hành động">
         <Button

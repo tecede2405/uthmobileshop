@@ -36,6 +36,7 @@
     width: 140px;
     height:70px;
     object-fit:cover;
+    cursor : pointer;
 }
 .page-cart,.page-login, .page-contact {
     display: flex;
