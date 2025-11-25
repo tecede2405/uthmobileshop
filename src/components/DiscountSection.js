@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
+import { Badge } from "antd";
+
 function DiscountSection({ percentage = 10 }) {
   const API_URL = process.env.REACT_APP_API_URL;
   const [products, setProducts] = useState([]);
@@ -24,7 +26,7 @@ function DiscountSection({ percentage = 10 }) {
         alt="Banner"
         className="banner-image"
       />
-      <div className="products mt-3 mb-0">
+      <div className="products mt-3 mb-3">
         <ScrollToTop />
         <h2 className="discount-title mt-1 mb-1">Sản phẩm khuyến mãi hôm nay</h2>
         <div className="product-list row g-4">
@@ -35,15 +37,15 @@ function DiscountSection({ percentage = 10 }) {
                 className="product-card col-5 col-sm-4 col-md-3 col-lg-3 col-xl-2 me-3 mt-5"
                 onClick={() => handleClick(product)}
               >
+              <Badge.Ribbon
+              text={`Giảm ${product.discount}%`}
+              color="#e60000">
                 <img
                   src={product.thumbnail}
                   alt={product.name}
                   className="product-image"
                 />
                 <h3 className="product-name">{product.name}</h3>
-                <p className="product-discount">
-                  Giảm giá {product.discountPercentage}%
-                </p>
                 <p className="product-price">
                     {(product.price * (100 - product.discount) / 100).toLocaleString("vi-VN")} VNĐ -{" "}
                     <span
@@ -58,6 +60,7 @@ function DiscountSection({ percentage = 10 }) {
                 <p className="product-installment">
                   Trả góp 0% - 0đ phụ thu - 0đ trả trước - kỳ hạn đến 12 tháng
                 </p>
+                </Badge.Ribbon>
               </div>
             ))
           ) : (

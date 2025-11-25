@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"; 
 import { useNavigate, useSearchParams } from "react-router-dom";
-
+import { Badge } from "antd";
 function SearchByName() {
   const API_URL = process.env.REACT_APP_API_URL;
   const [products, setProducts] = useState([]);
@@ -58,13 +58,15 @@ function SearchByName() {
                   className="product-card col-5 col-sm-4 col-md-3 col-lg-3 col-xl-2 me-2 mt-3"
                   onClick={() => handleClick(product)}
                 >
+                  <Badge.Ribbon
+                    text={`Giảm ${product.discount}%`}
+                    color="#e60000">
                   <img
                     src={product.thumbnail}
                     alt={product.name}
                     className="product-image"
                   />
                   <h3 className="product-name">{product.name}</h3>
-                  <p className="product-discount">Giảm giá {product.discount}%</p>
                   <p className="product-price">
                     {product.price * (100 - product.discount) / 100} -{" "}
                     <span
@@ -79,6 +81,7 @@ function SearchByName() {
                   <p className="product-installment">
                     Trả góp 0% - 0đ phụ thu - 0đ trả trước - kỳ hạn đến 12 tháng
                   </p>
+                  </Badge.Ribbon>
                 </div>
               ))}
             </div>
