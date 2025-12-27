@@ -21,7 +21,7 @@ function SmartphoneSection() {
   return (
     <>
      <img
-        src="https://cdn2.cellphones.com.vn/insecure/rs:fill:1036:450/q:90/plain/https://dashboard.cellphones.com.vn/storage/690x300_iPhone_17_Pro_Opensale_v3.png"
+        src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/H1_1440x242_5_f8901db98f.png"
         alt="Banner"
         className="product-banner-image"
       />
